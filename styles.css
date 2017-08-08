@@ -1,0 +1,11 @@
+div{
+  border: 1px solid black;
+  height: 275px;
+  width: 275px;
+  display: inline-block;
+  margin: 10px;
+}
+
+/*main{
+  width: 1000px;
+}*/

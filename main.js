@@ -8,7 +8,7 @@ function convertObject(data){
 
   let recipes = "";
 
-for(i = 0; i < data.results.length; i++){
+for(let i = 0; i < data.results.length; i++){
   console.log(data.results[i].title)
   console.log(data.results[i].thumbnail)
   console.log(data.results[i].ingredients)
@@ -27,9 +27,17 @@ for(i = 0; i < data.results.length; i++){
 
 }
 
+let result = document.querySelector("#butt")
 
 
+result.addEventListener("click", function() {
 
-fetch("https://recipepuppyproxy.herokuapp.com/api/?q=omelet")
-  .then(convertJson)
-  .then(convertObject);
+  let input = document.querySelector("#tasty")
+  let food = input.value;
+  
+fetch(`https://recipepuppyproxy.herokuapp.com/api/?q=${food}`)
+.then(convertJson)
+.then(convertObject);
+});
+
+
